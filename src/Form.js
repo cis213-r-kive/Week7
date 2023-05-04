@@ -20,25 +20,25 @@ function Form(){
     function submitFormHandler(event){
         event.preventDefault();
         const emailValidCheck = enteredEmail.includes('@');
-        const passwordValidCheck = enteredPassword.trim().length >= 5;
+        const passwordValidCheck = enteredPassword.length >= 5;
 
         setEmailValidCheck(emailValidCheck);
         setPasswordValidCheck(passwordValidCheck);
         if (!emailValidCheck || !passwordValidCheck){
             return;
         }
-        console.log('Valid inputs, form submitted')
+    
 
     }
 
     return (
         <form onSubmit={submitFormHandler}>
-            <div>
+            <div className="emailContainer">
                 <label htmlFor="email" className={!emailValidCheck && 'invalid'}>Email: </label>
                 <input type="email" id="email" onChange={changeEmailHandler} className={!emailValidCheck && 'invalid'}></input>
             </div>
 
-            <div>
+            <div className="passContainer">
                 <label htmlFor="password" className={!passwordValidCheck && 'invalid'}>Password: </label>
                 <input type="text" id="pass" onChange={changePasswordHandler} className={!passwordValidCheck && 'invalid'}></input>
             </div>
