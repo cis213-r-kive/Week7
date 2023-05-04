@@ -1,5 +1,6 @@
 import {useState} from 'react';
-import './App.css';
+//import './App.css';
+import classes from './Form.module.css';
 
 function Form(){
    
@@ -34,17 +35,24 @@ function Form(){
     return (
         <form onSubmit={submitFormHandler}>
             <div className="emailContainer">
-                <label htmlFor="email" className={!emailValidCheck && 'invalid'}>Email: </label>
-                <input type="email" id="email" onChange={changeEmailHandler} className={!emailValidCheck && 'invalid'}></input>
+                <label htmlFor="email" className={!emailValidCheck ? `${classes.label} ${classes.invalid}` :
+classes.label}>Email: </label>
+                <input type="email" id="email" onChange={changeEmailHandler} className={!emailValidCheck
+          ? `${classes.input} ${classes.invalid}`
+          : classes.input}></input>
             </div>
 
             <div className="passContainer">
-                <label htmlFor="password" className={!passwordValidCheck && 'invalid'}>Password: </label>
-                <input type="text" id="pass" onChange={changePasswordHandler} className={!passwordValidCheck && 'invalid'}></input>
+                <label htmlFor="password" className={ !passwordValidCheck
+          ? `${classes.label} ${classes.invalid}`
+          : classes.label}>Password: </label>
+                <input type="text" id="pass" onChange={changePasswordHandler} className={ !passwordValidCheck
+          ? `${classes.input} ${classes.invalid}`
+          : classes.input}></input>
             </div>
 
             <div>
-                <button>SUBMIT</button>
+                <button className={classes.button}>SUBMIT</button>
             </div>
         </form>
     );

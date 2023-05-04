@@ -1,0 +1,30 @@
+  .emailContainer,.passContainer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;;
+  }
+  
+  .label {
+    margin-right: 10px;
+  }
+  
+  .form {
+    background-color: #2E5077;
+    padding: 1em;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .button:hover {
+    background-color: gray;
+  }
+  
+  .label.invalid {
+    font-weight: bold;
+    color: #ce0653;
+  }
+  
+  .input.invalid {
+    background-color: #fcbed6;
+    border-color: #ce0653;
+  }
